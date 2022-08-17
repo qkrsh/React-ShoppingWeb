@@ -49,7 +49,6 @@ function UploadProductPage(props) {
             return alert(" 모든 값을 넣어주셔야 합니다.")
         }
 
-
         //서버에 채운 값들을 request로 보낸다.
 
         const body = {
