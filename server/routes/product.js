@@ -41,6 +41,17 @@ router.post('/', (req, res) => {
 
 })
 
+router.post('/products', (req, res) => {
+
+    //DB의 모든 상품정보 가져오기
+    //조건이 있다면 괄호안에 추가하면됨
+    Product.find()  
+        .populate("writer")
+        .exec((err,productInfo)=>{
+            if(err) return res.status(400).json({success: false, err})
+            return res.status(200).json({success:true,productInfo }) 
+    })
+})
 
 
 module.exports = router;
